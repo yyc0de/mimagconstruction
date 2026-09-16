@@ -71,14 +71,7 @@ const projects = [
     description: "Complete package 2-storey housing, from Civil / Structural Works down to MEP (Labor Only).",
     images: ["assets/images/warehouse.png"]
   },
-  {
-    title: "EVG Emergency Vehicle Garage — GNPower Mariveles Energy Center",
-    category: "industrial",
-    location: "Alasasin, Mariveles, Bataan",
-    cost: "Php 15,800,000",
-    description: "Steel structure, roofing, concrete pavement and enclosure.",
-    images: ["assets/images/power-plant.png"]
-  },
+
   {
     title: "Oxygen Plant Maintenance Work — PASAR",
     category: "industrial",
