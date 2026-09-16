@@ -64,10 +64,10 @@ const projects = [
     images: ["assets/images/3 storey multi-purpose church bldg..png"]
   },
   {
-    title: "Pasinaya Housing",
+    title: "Pagsikat Place Housing",
     category: "building",
     location: "Brgy. Catmon, Sta. Maria, Bulacan",
-    cost: "Php 850,000",
+    cost: "Php 6,000,000",
     description: "Complete package 2-storey housing, from Civil / Structural Works down to MEP (Labor Only).",
     images: ["assets/images/Pagsikat Place.png"]
   },
@@ -102,7 +102,7 @@ const projects = [
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 919,107.84",
     description: "Disassembling of existing unit and installation of new one.",
-    images: ["assets/images/Maintenance of Hydrogen Drier System.jfif"]
+    images: ["assets/images/equipment.png"]
   },
   {
     title: "Installation of Isolating Valves on U2 Generator Hydrogen Drier",
@@ -110,14 +110,14 @@ const projects = [
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 404,320",
     description: "Supply and installation of isolating valves.",
-    images: ["assets/images/equipment.png"]
+    images: ["assets/images/Maintenance of Hydrogen Drier System.jfif"]
   },
   {
-    title: "Raemulan Lands / Rayvanes Pagsikat Place",
+    title: "TPAC Philippines Packaging - Enclosed Cabin",
     category: "building",
-    location: "Magalang, Pampanga",
-    cost: "Php 7,080,000.00",
-    description: "Construction of Housing Units.",
+    location: "Global Park, San Simon, Pampanga",
+    cost: "Php 3,200,000.00",
+    description: "Construction of Enclose Cabin.",
     images: ["assets/images/warehouse-interior-2.png"]
   }
 ];
