@@ -37,7 +37,7 @@ const projects = [
     location: "Brgy. Sta. Monica, San Simon, Pampanga",
     cost: "Php 8,500,000",
     description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/warehouse-interior-1.png"]
+    images: ["assets/images/3 storey residential bldg.png"]
   },
   {
     title: "3-Storey Residential Building with Penthouse",
@@ -45,7 +45,7 @@ const projects = [
     location: "Santa Ana, Manila",
     cost: "Php 10,000,000",
     description: "Construction from foundation work to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/warehouse-interior-2.png"]
+    images: ["assets/images/3 storey res bldg with penthouse.png"]
   },
   {
     title: "Three-Bedroom Bungalow Residential Building",
@@ -53,7 +53,7 @@ const projects = [
     location: "Brgy. Sta. Monica, San Simon, Pampanga",
     cost: "Php 6,000,000",
     description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/warehouse-interior-3.png"]
+    images: ["assets/images/Bungalow project.jfif"]
   },
   {
     title: "3-Storey Multi-Purpose Church Building",
@@ -61,7 +61,7 @@ const projects = [
     location: "Brgy. Halang, Cambacita, Laguna",
     cost: "Php 9,750,000",
     description: "Construction from foundation to roofing, including rough-in for Electrical and Plumbing Works.",
-    images: ["assets/images/warehouse-interior-4.png"]
+    images: ["assets/images/3 storey multi-purpose church bldg..png"]
   },
   {
     title: "Pasinaya Housing",
@@ -69,7 +69,7 @@ const projects = [
     location: "Brgy. Catmon, Sta. Maria, Bulacan",
     cost: "Php 850,000",
     description: "Complete package 2-storey housing, from Civil / Structural Works down to MEP (Labor Only).",
-    images: ["assets/images/warehouse.png"]
+    images: ["assets/images/Pagsikat Place.png"]
   },
 
   {
@@ -86,7 +86,7 @@ const projects = [
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 6,328,000",
     description: "Inspection and cleaning, repair and maintenance of electrical equipment.",
-    images: ["assets/images/equipment.png"]
+    images: ["assets/images/Electrical Unitized Works - GMEC.png"]
   },
   {
     title: "Lapid Arena — Fire Protection System",
@@ -102,7 +102,7 @@ const projects = [
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 919,107.84",
     description: "Disassembling of existing unit and installation of new one.",
-    images: ["assets/images/equipment.png"]
+    images: ["assets/images/Maintenance of Hydrogen Drier System.jfif"]
   },
   {
     title: "Installation of Isolating Valves on U2 Generator Hydrogen Drier",
