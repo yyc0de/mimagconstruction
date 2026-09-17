@@ -110,7 +110,7 @@ const projects = [
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 404,320",
     description: "Supply and installation of isolating valves.",
-    images: ["assets/images/Maintenance of Hydrogen Drier System.jfif"]
+    images: ["assets/images/Maintenance of Hydrogen Drier System.png"]
   },
   {
     title: "TPAC Philippines Packaging - Enclosed Cabin",
