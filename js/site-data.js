@@ -53,7 +53,7 @@ const projects = [
     location: "Brgy. Sta. Monica, San Simon, Pampanga",
     cost: "Php 6,000,000",
     description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/Bungalow project.jfif"]
+    images: ["assets/images/Bungalow project.png"]
   },
   {
     title: "3-Storey Multi-Purpose Church Building",
