@@ -12,7 +12,9 @@ const header = $("#site-header");
 const backTop = $("#backTop");
 const menuToggle = $("#menuToggle");
 const mobilePanel = $("#mobilePanel");
-const projectGrid = $("#projectGrid");
+const completedProjectGrid = $("#completedProjectGrid");
+const ongoingProjectGrid = $("#ongoingProjectGrid");
+const ongoingEmpty = $("#ongoingEmpty");
 const certificateGrid = $("#certificateGrid");
 const certificateCount = $("#certificateCount");
 
@@ -49,42 +51,66 @@ function applyCompanyData() {
 // ---------------------------------------------------------------
 // PROJECT RENDERING
 // ---------------------------------------------------------------
+function getProjectImages(project) {
+  if (!project) return [];
+  return Array.isArray(project.images) && project.images.length
+    ? project.images
+    : (PROJECT_GALLERIES?.[project.folder] || []);
+}
+
+function renderProjectCard(project, index, status) {
+  const card = document.createElement("article");
+  card.className = "project reveal visible";
+  card.tabIndex = 0;
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `View ${project.title} project gallery`);
+  card.dataset.index = String(index);
+
+  const firstImage = getProjectImages(project)[0] || "";
+  const statusLabel = status === "ongoing" ? "Ongoing" : "Completed";
+  card.innerHTML = `
+    <div class="project-media">
+      <img src="${escapeAttr(firstImage)}" alt="${escapeAttr(project.title)} project imagery" loading="lazy">
+      <span class="project-status-badge ${status === "ongoing" ? "ongoing" : "completed"}">${statusLabel}</span>
+    </div>
+    <div class="project-body">
+      <div class="project-location">${escapeHtml(project.location || "")}</div>
+      <h3>${escapeHtml(project.title || "Untitled Project")}</h3>
+      <div class="project-cost">${escapeHtml(project.cost || "")}</div>
+    </div>
+    <div class="project-link" aria-hidden="true">↗</div>
+  `;
+
+  card.addEventListener("click", () => openProject(index, card));
+  card.addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openProject(index, card);
+    }
+  });
+
+  return card;
+}
+
 function renderProjects(filter = "all") {
-  projectGrid.innerHTML = "";
+  if (!completedProjectGrid || !ongoingProjectGrid) return;
+
+  completedProjectGrid.innerHTML = "";
+  ongoingProjectGrid.innerHTML = "";
 
   projects.forEach((project, index) => {
+    const status = project.status || "completed";
+    if (status === "ongoing") {
+      ongoingProjectGrid.appendChild(renderProjectCard(project, index, status));
+      return;
+    }
+
     if (filter !== "all" && project.category !== filter) return;
-
-    const card = document.createElement("article");
-    card.className = "project reveal visible";
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-label", `View ${project.title} project gallery`);
-    card.dataset.index = String(index);
-
-    const firstImage = project.images?.[0] || "";
-    card.innerHTML = `
-      <div class="project-media">
-        <img src="${escapeAttr(firstImage)}" alt="${escapeAttr(project.title)} project imagery" loading="lazy">
-      </div>
-      <div class="project-body">
-        <div class="project-location">${escapeHtml(project.location || "")}</div>
-        <h3>${escapeHtml(project.title || "Untitled Project")}</h3>
-        <div class="project-cost">${escapeHtml(project.cost || "")}</div>
-      </div>
-      <div class="project-link" aria-hidden="true">↗</div>
-    `;
-
-    card.addEventListener("click", () => openProject(index, card));
-    card.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openProject(index, card);
-      }
-    });
-
-    projectGrid.appendChild(card);
+    completedProjectGrid.appendChild(renderProjectCard(project, index, "completed"));
   });
+
+  const hasOngoing = ongoingProjectGrid.children.length > 0;
+  if (ongoingEmpty) ongoingEmpty.hidden = hasOngoing;
 }
 
 function escapeHtml(value) {
@@ -142,6 +168,8 @@ const modalCost = $("#modalCost");
 const modalScope = $("#modalScope");
 const modalSource = $("#modalSource");
 const modalCostWrap = $("#modalCostWrap");
+const modalStatusWrap = $("#modalStatusWrap");
+const modalStatus = $("#modalStatus");
 const modalClose = $("#modalClose");
 const galleryThumbs = $("#galleryThumbs");
 const galleryPrev = $("#galleryPrev");
@@ -155,10 +183,11 @@ let lastFocused = null;
 
 function openProject(index, sourceElement) {
   const project = projects[index];
-  if (!project || !project.images?.length) return;
+  const images = getProjectImages(project);
+  if (!project || !images.length) return;
 
   viewerType = "project";
-  viewerItems = project.images;
+  viewerItems = images;
   viewerIndex = 0;
   lastFocused = sourceElement;
 
@@ -166,7 +195,9 @@ function openProject(index, sourceElement) {
   modalTitle.textContent = project.title || "Project";
   modalLocation.textContent = project.location || "";
   modalScope.textContent = project.description || "";
-  modalSource.textContent = "MIMAG Company Profile";
+  modalSource.textContent = "MIMAG project records";
+  modalStatusWrap.hidden = false;
+  modalStatus.textContent = project.status === "ongoing" ? "Ongoing" : "Completed";
   modalCostWrap.hidden = !project.cost;
   if (project.cost) $("#modalCost").textContent = project.cost;
 
@@ -186,8 +217,9 @@ function openCertificate(index, sourceElement) {
   modal.classList.add("modal-certificate");
   modalTitle.textContent = certificate.title;
   modalLocation.textContent = "Registration / Accreditation";
-  modalScope.textContent = "Actual certificate or registration image reproduced from the latest supplied MIMAG Company Profile PDF.";
-  modalSource.textContent = "MIMAG Company Profile · Sept. 16, 2026";
+  modalScope.textContent = "Certificate or registration image provided for MIMAG’s registrations and accreditations.";
+  modalSource.textContent = "MIMAG registrations and accreditations";
+  modalStatusWrap.hidden = true;
   modalCostWrap.hidden = true;
 
   renderViewer();
@@ -201,7 +233,7 @@ function renderViewer() {
   modalImage.src = item;
   modalImage.alt = viewerType === "certificate"
     ? certifications[viewerIndex]?.title || "Certificate"
-    : `${projects.find(p => p.images.includes(item))?.title || "Project"} project image`;
+    : `${projects.find(p => getProjectImages(p).includes(item))?.title || "Project"} project image`;
 
   galleryCount.textContent = `${viewerIndex + 1} / ${viewerItems.length}`;
   galleryPrev.hidden = viewerItems.length <= 1;

@@ -5,5 +5,8 @@
   "description": "MIMAG Construction & Trading Corporation corporate website",
   "dependencies": {
     "resend": "^6.0.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-project-galleries.mjs"
   }
 }

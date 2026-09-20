@@ -10,7 +10,9 @@
 //   location    = project location
 //   cost        = documented project value
 //   description = documented scope
-//   images      = every photo that should appear in the project gallery
+//   folder      = folder under assets/images/projects/ containing the project photos
+//                 Every image file inside that folder is automatically included in the gallery.
+//   status      = completed | ongoing
 //
 // CERTIFICATIONS:
 //   title = certificate / registration name
@@ -33,92 +35,102 @@ const COMPANY = {
 const projects = [
   {
     title: "3-Storey Residential Building",
+    folder: "3-Storey Residential Building",
     category: "building",
+    status: "completed",
     location: "Brgy. Sta. Monica, San Simon, Pampanga",
     cost: "Php 8,500,000",
-    description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/3 storey residential bldg.png"]
+    description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works."
   },
   {
     title: "3-Storey Residential Building with Penthouse",
+    folder: "3-Storey Residential Building with Penthouse",
     category: "building",
+    status: "completed",
     location: "Santa Ana, Manila",
     cost: "Php 10,000,000",
-    description: "Construction from foundation work to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/3 storey res bldg with penthouse.png"]
+    description: "Construction from foundation work to roofing, including Electrical, Plumbing and Finishing Works."
   },
   {
     title: "Three-Bedroom Bungalow Residential Building",
+    folder: "Three-Bedroom Bungalow Residential Building",
     category: "building",
+    status: "completed",
     location: "Brgy. Sta. Monica, San Simon, Pampanga",
     cost: "Php 6,000,000",
-    description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works.",
-    images: ["assets/images/Bungalow project.png"]
+    description: "Construction from foundation to roofing, including Electrical, Plumbing and Finishing Works."
   },
   {
     title: "3-Storey Multi-Purpose Church Building",
+    folder: "3-Storey Multi-Purpose Church Building",
     category: "building",
+    status: "completed",
     location: "Brgy. Halang, Cambacita, Laguna",
     cost: "Php 9,750,000",
-    description: "Construction from foundation to roofing, including rough-in for Electrical and Plumbing Works.",
-    images: ["assets/images/3 storey multi-purpose church bldg..png"]
+    description: "Construction from foundation to roofing, including rough-in for Electrical and Plumbing Works."
   },
   {
     title: "Pagsikat Place Housing",
+    folder: "Pagsikat Place Housing",
     category: "building",
+    status: "completed",
     location: "Brgy. Catmon, Sta. Maria, Bulacan",
     cost: "Php 6,000,000",
-    description: "Complete package 2-storey housing, from Civil / Structural Works down to MEP (Labor Only).",
-    images: ["assets/images/Pagsikat Place.png"]
+    description: "Complete package 2-storey housing, from Civil / Structural Works down to MEP (Labor Only)."
   },
-
   {
     title: "Oxygen Plant Maintenance Work — PASAR",
+    folder: "Oxygen Plant Maintenance Work - PASAR",
     category: "industrial",
+    status: "completed",
     location: "Lide, Isabel, Leyte",
     cost: "Php 8,597,473.80",
-    description: "Electro-Mechanical Maintenance Work.",
-    images: ["assets/images/industrial-team.png"]
+    description: "Electro-Mechanical Maintenance Work."
   },
   {
     title: "Electrical Unitized for Interim Repair and Short Outage — 2025",
+    folder: "Electrical Unitized for Interim Repair and Short Outage - 2025",
     category: "industrial",
+    status: "completed",
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 6,328,000",
-    description: "Inspection and cleaning, repair and maintenance of electrical equipment.",
-    images: ["assets/images/Electrical Unitized Works - GMEC.png"]
+    description: "Inspection and cleaning, repair and maintenance of electrical equipment."
   },
   {
     title: "Lapid Arena — Fire Protection System",
+    folder: "Lapid Arena - Fire Protection System",
     category: "mepf",
+    status: "completed",
     location: "Angeles City, Pampanga",
     cost: "Php 7,050,737.78",
-    description: "Design and installation of complete Fire Protection System.",
-    images: ["assets/images/fire-protection.png"]
+    description: "Design and installation of complete Fire Protection System."
   },
   {
     title: "Installation of Electromagnetic Separator — GNPower Mariveles",
+    folder: "Installation of Electromagnetic Separator - GNPower Mariveles",
     category: "industrial",
+    status: "completed",
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 919,107.84",
-    description: "Disassembling of existing unit and installation of new one.",
-    images: ["assets/images/equipment.png"]
+    description: "Disassembling of existing unit and installation of new one."
   },
   {
     title: "Installation of Isolating Valves on U2 Generator Hydrogen Drier",
+    folder: "Installation of Isolating Valves on U2 Generator Hydrogen Drier",
     category: "mepf",
+    status: "completed",
     location: "Alasasin, Mariveles, Bataan",
     cost: "Php 404,320",
-    description: "Supply and installation of isolating valves.",
-    images: ["assets/images/Maintenance of Hydrogen Drier System.png"]
+    description: "Supply and installation of isolating valves."
   },
   {
     title: "TPAC Philippines Packaging - Enclosed Cabin",
+    folder: "TPAC Philippines Packaging - Enclosed Cabin",
     category: "building",
+    status: "completed",
     location: "Global Park, San Simon, Pampanga",
     cost: "Php 3,200,000.00",
-    description: "Construction of Enclose Cabin.",
-    images: ["assets/images/warehouse-interior-2.png"]
+    description: "Construction of Enclosed Cabin."
   }
 ];
 

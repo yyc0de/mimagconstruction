@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="MIMAG Construction & Trading Corporation">
   <meta property="og:description" content="Engineering-led construction, from design to turnover.">
-  <meta property="og:image" content="assets/images/hero-project.jpeg">
+  <meta property="og:image" content="assets/images/hero-project.png">
   <meta property="og:url" content="https://www.example.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MIMAG Construction & Trading Corporation">
@@ -78,7 +78,7 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-media"><img src="assets/images/hero-project.png" alt="Construction engineering imagery from the MIMAG company profile" fetchpriority="high"></div>
+      <div class="hero-media"><img src="assets/images/hero-project.png" alt="Construction engineering imagery" fetchpriority="high"></div>
       <div class="container hero-content reveal">
         <div class="eyebrow">MIMAG Construction & Trading Corporation</div>
         <h1>Engineering-led<br><span>construction.</span></h1>
@@ -103,7 +103,7 @@
           <h2>From design<br>to turnover.</h2>
           <p class="intro-lead">MIMAG Construction and Trading Corporation is an engineering-led contractor covering design, project management, construction execution, maintenance and trading.</p>
           <div class="intro-copy">
-            <p>Formerly MIMAG Design and Construction, the company was registered in 2016 at the Department of Trade and Industries and later incorporated with the Securities and Exchange Commission in 2021.</p>
+            <p>Formerly Mimag Design and Construction, the company was registered in 2016 at the Department of Trade and Industries and later incorporated with the Securities and Exchange Commission in 2021.</p>
             <p>MIMAG works with private and public sectors on new and refurbishment projects across civil engineering, electro-mechanical engineering and architecture.</p>
             <p>Strategically based in Pampanga, MIMAG describes itself as “close to customer,” mobilizing for small, medium and large works across the regions.</p>
           </div>
@@ -113,8 +113,40 @@
           </div>
         </div>
         <div class="intro-image reveal">
-          <img src="assets/images/crane.png" alt="Construction crane shown in the MIMAG company profile" loading="lazy">
+          <img src="assets/images/crane.png" alt="Construction crane" loading="lazy">
           <div class="image-label">General Engineering · Contracting · Trading</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section purpose" id="purpose">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">Our purpose</div><h2>Built on purpose.<br>Driven by progress.</h2></div>
+          <div>MIMAG combines dependable project delivery with people development, long-term partnerships and a commitment to continuous improvement.</div>
+        </div>
+        <div class="purpose-grid">
+          <article class="purpose-card vision-card reveal">
+            <span class="purpose-number">01</span>
+            <div class="purpose-label">Vision</div>
+            <h3>A trusted leader in construction and trading.</h3>
+            <p>To be a leading and trusted contractor and business partner, delivering dependable construction and trading solutions while creating lasting value for clients, employees and suppliers.</p>
+          </article>
+          <article class="purpose-card mission-card reveal">
+            <span class="purpose-number">02</span>
+            <div class="purpose-label">Mission</div>
+            <h3>Quality delivery. Professional people. Lasting partnerships.</h3>
+            <p>To deliver quality, standards-driven turnkey construction and technical services across projects of every scale, while developing skilled professionals and building lasting client relationships.</p>
+          </article>
+          <article class="purpose-card values-card reveal">
+            <span class="purpose-number">03</span>
+            <div class="purpose-label">Core Values</div>
+            <div class="value-list">
+              <div><strong>Continuous Improvement</strong><span>We stay energetic, creative and committed to doing better.</span></div>
+              <div><strong>Client Focus</strong><span>We anticipate needs, overcome barriers and create opportunities.</span></div>
+              <div><strong>Learning & Innovation</strong><span>We learn from experience, encourage new ideas and adapt to advancing technology.</span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -123,7 +155,7 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="eyebrow">What we deliver</div><h2>Scope built around the project.</h2></div>
-          <div>MIMAG’s expertise spans infrastructure, residential and commercial construction, finishing works, and electro-mechanical systems.</div>
+          <div>MIMAG’s documented scope spans infrastructure, residential and commercial construction, finishing works, and electro-mechanical works.</div>
         </div>
         <div class="service-grid">
           <article class="service reveal"><span class="service-num">01</span><h3>Infrastructure Works</h3><p>Pre-engineered steel structures, underground pipes, road paving and asphalting, lighting poles, communication towers and centralized overhead water tanks.</p></article>
@@ -164,17 +196,42 @@
     <section class="section projects" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <div><div class="eyebrow">Track record</div><h2>Selected project experience.</h2></div>
-          <div>Explore selected projects, including their documented scope, project value, and key details.</div>
+          <div><div class="eyebrow">Project portfolio</div><h2>Work delivered.<br>Work in progress.</h2></div>
+          <div>Explore MIMAG’s completed project experience and keep an eye on current work as the portfolio grows. Select a project to view its documented scope and value.</div>
         </div>
-        <div class="filters reveal" role="group" aria-label="Filter projects">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="building">Buildings</button>
-          <button class="filter" data-filter="industrial">Industrial / Maintenance</button>
-          <button class="filter" data-filter="mepf">MEPF / Fire</button>
+
+        <div class="project-status-block completed-projects">
+          <div class="project-status-head reveal">
+            <div>
+              <span class="status-kicker completed-kicker">Completed Projects</span>
+              <h3>Documented project experience.</h3>
+            </div>
+            <p>Selected projects presented from the current MIMAG portfolio.</p>
+          </div>
+          <div class="filters reveal" role="group" aria-label="Filter completed projects">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="building">Buildings</button>
+            <button class="filter" data-filter="industrial">Industrial / Maintenance</button>
+            <button class="filter" data-filter="mepf">MEPF / Fire</button>
+          </div>
+          <div class="project-grid" id="completedProjectGrid" aria-live="polite"></div>
         </div>
-        <div class="project-grid" id="projectGrid" aria-live="polite"></div>
-        <p style="color:var(--muted);font-size:.72rem;margin-top:18px">Images are representative project imagery from different MIMAG projects.</p>
+
+        <div class="project-status-block ongoing-projects">
+          <div class="project-status-head reveal">
+            <div>
+              <span class="status-kicker ongoing-kicker">Ongoing Projects</span>
+              <h3>Current work, updated as it progresses.</h3>
+            </div>
+            <p>Current project work will appear here as the portfolio is updated.</p>
+          </div>
+          <div class="project-grid" id="ongoingProjectGrid" aria-live="polite"></div>
+          <div class="ongoing-empty reveal" id="ongoingEmpty" hidden>
+            <span class="ongoing-empty-mark">+</span>
+            <div><strong>Ongoing projects are still under development.</strong><p>This section will be updated as current projects are added.</p></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -193,7 +250,7 @@
             <div class="timeline-row"><strong>ALFANAR COMPANY</strong><span>Tender and Design Engineer</span></div>
             <div class="timeline-row"><strong>PROJACS INTERNATIONAL</strong><span>Mechanical Inspector and Design Reviewer</span></div>
           </div>
-          <p style="margin-top:22px">International project experience in the Kingdom of Saudi Arabia, covering HVAC, firefighting, plumbing, and mechanical pump system works.</p>
+          <p style="margin-top:22px">MIMAG also brings international project experience, including HVAC, fire fighting, plumbing and mechanical pump system work in the Kingdom of Saudi Arabia.</p>
         </div>
       </div>
     </section>
@@ -202,12 +259,12 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="eyebrow">Legitimacy · safety · quality</div><h2>Built around compliance and execution.</h2></div>
-          <div>MIMAG is a registered, licensed, and compliant contractor committed to maintaining high standards of worker safety and quality across all project execution.</div>
+          <div>The supplied profile presents MIMAG as a registered, licensed and compliant contractor and states that worker safety and quality of work are first priorities in project execution.</div>
         </div>
         <div class="standards-grid">
           <article class="standard-panel dark reveal">
             <h3>Safety & Quality</h3>
-            <p>MIMAG’s management principles explicitly place worker safety and quality of work among the first priorities in project execution.</p>
+            <p>MIMAG places worker safety and quality of work among the first priorities in project execution.</p>
             <div class="doc-list">
               <div class="doc"><strong>DOLE OSH Standards</strong><span>Registration documented in March 2026</span></div>
               <div class="doc"><strong>DOLE Rule 1020</strong><span>Occupational Safety and Health Standards registration</span></div>
@@ -217,7 +274,7 @@
           </article>
           <article class="standard-panel reveal accreditation-panel">
             <h3>Registrations & Accreditations</h3>
-            <p>MIMAG holds government registrations, licenses, and accreditations supporting its corporate and contracting operations.</p>
+            <p>Government registrations, licenses and accreditations support MIMAG’s corporate and contracting operations.</p>
             <details class="accreditation-details">
               <summary>
                 <span class="accreditation-summary-text">View Registrations & Accreditations</span>
@@ -226,7 +283,7 @@
               </summary>
               <div class="accreditation-content">
                 <div class="certificate-grid" id="certificateGrid" aria-live="polite"></div>
-                <p class="certificate-note">All accreditations and certifications presented are valid and duly issued by the respective government agencies and authorized institutions. </p>
+                <p class="certificate-note">Certificate and registration images are presented as part of MIMAG’s registrations and accreditations.</p>
               </div>
             </details>
           </article>
@@ -238,13 +295,13 @@
       <div class="container">
         <div class="section-head reveal">
           <div><div class="eyebrow">Continuous improvement</div><h2>People, training, progress.</h2></div>
-          <div>MIMAG invests in professional development through industry organizations, professional engineering training, and continuous skills development.</div>
+          <div>MIMAG invests in professional development through industry organizations and professional engineering training.</div>
         </div>
         <div class="training-grid">
-          <article class="training-card reveal"><img src="assets/images/training-event.png" alt="Engineering training and professional development imagery from the MIMAG profile" loading="lazy"><div class="overlay"><h3>Continuous learning</h3><p>Professional development through industry organizations and engineering training.</p></div></article>
+          <article class="training-card reveal"><img src="assets/images/training-event.png" alt="Engineering training and professional development imagery from MIMAG" loading="lazy"><div class="overlay"><h3>Continuous learning</h3><p>Professional development through industry organizations and engineering training.</p></div></article>
           <div class="training-side">
-            <article class="mini-card reveal"><img src="assets/images/engineering-training.png" alt="Professional engineering training imagery" loading="lazy"><div><h4>UP National Engineering Center</h4><p>Professional engineering training supports MIMAG’s commitment to technical expertise and continuous professional development.</p></div></article>
-            <article class="mini-card reveal"><img src="assets/images/industrial-team.png" alt="MIMAG crew imagery from the company profile" loading="lazy"><div><h4>Experienced staff</h4><p>MIMAG’s engineers and workers are trained to execute work precisely, maintain quality standards, and follow health and safety requirements.</p></div></article>
+            <article class="mini-card reveal"><img src="assets/images/engineering-training.png" alt="Professional engineering training imagery" loading="lazy"><div><h4>UP National Engineering Center</h4><p>MIMAG invests in professional engineering training and continuous learning.</p></div></article>
+            <article class="mini-card reveal"><img src="assets/images/industrial-team.png" alt="MIMAG crew imagery" loading="lazy"><div><h4>Experienced staff</h4><p>Engineers and workers are described as trained to execute precisely, follow quality standards and observe health and safety rules.</p></div></article>
           </div>
         </div>
       </div>
@@ -255,8 +312,8 @@
         <div class="reveal">
           <div class="eyebrow">Let’s build together</div>
           <h2>Start a project conversation.</h2>
-          <p class="contact-copy"></p>
-          <div class="contact-details">Tell MIMAG what you are planning, where the project is located, and the service you need. Your inquiry will be securely sent directly to the MIMAG team for review.
+          <p class="contact-copy">Tell MIMAG what you are planning, where the project is located, and the service you need. The form sends your inquiry through the site’s secure serverless email endpoint.</p>
+          <div class="contact-details">
             <div><span class="detail-label">Head Office</span><span class="detail-value">Lot 1, Block 1, Phase 2, La Trevi Estate, Sta. Monica, San Simon, Pampanga 2015</span></div>
             <div><span class="detail-label">Email</span><a class="detail-value" href="mailto:mimag.gencon@gmail.com">mimag.gencon@gmail.com</a></div>
             <div><span class="detail-label">Telephone</span><a class="detail-value" href="tel:+639273883486">+63 927 388 3486</a> &nbsp; / &nbsp; <a class="detail-value" href="tel:+639917367724">+63 991 736 7724</a></div>
@@ -333,8 +390,9 @@
           <h3 id="modalTitle"></h3>
           <p id="modalScope"></p>
           <div class="modal-meta">
+            <div id="modalStatusWrap"><strong>Project status</strong><span id="modalStatus"></span></div>
             <div id="modalCostWrap"><strong>Documented project value</strong><span id="modalCost"></span></div>
-            <div><strong>Source</strong><span id="modalSource">MIMAG Company Profile</span></div>
+            <div><strong>Source</strong><span id="modalSource">MIMAG project records</span></div>
           </div>
         </div>
       </div>
@@ -342,6 +400,7 @@
   </div>
 
   <script src="js/site-data.js" defer></script>
+  <script src="js/project-gallery-data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

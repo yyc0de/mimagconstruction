@@ -91,6 +91,22 @@
     .intro-image img{height:540px;width:100%;object-fit:cover}
     .image-label{position:absolute;left:0;bottom:0;background:var(--navy);color:white;padding:18px 22px;font-family:"Barlow Condensed";letter-spacing:.08em;text-transform:uppercase;font-size:1.1rem}
 
+    .purpose{background:var(--navy);color:white;position:relative;overflow:hidden}
+    .purpose::before{content:"MIMAG";position:absolute;font-family:"Barlow Condensed";font-size:29vw;font-weight:700;color:rgba(255,255,255,.025);left:-4vw;bottom:-13vw;pointer-events:none}
+    .purpose .container{position:relative;z-index:1}
+    .purpose .section-head > div:last-child{color:#b9c7d5}
+    .purpose-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16)}
+    .purpose-card{background:var(--navy);padding:34px;min-height:390px;position:relative;overflow:hidden}
+    .purpose-card::after{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(27,164,154,.2);right:-45px;bottom:-45px;transform:rotate(45deg)}
+    .purpose-number{font-family:"Barlow Condensed";font-size:2.4rem;color:var(--gold);line-height:1}
+    .purpose-label{margin-top:35px;color:#6dc6be;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .purpose-card h3{font-size:2rem;line-height:1.02;margin:13px 0 18px;max-width:330px}
+    .purpose-card p{color:#b9c7d5;font-size:.84rem;max-width:390px}
+    .value-list{margin-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+    .value-list div{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+    .value-list strong{display:block;font-family:"Barlow Condensed";font-size:1.15rem;text-transform:uppercase}
+    .value-list span{display:block;color:#b9c7d5;font-size:.76rem;line-height:1.5;margin-top:3px}
+
     .services{background:white}
     .service-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
     .service{min-height:290px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:27px;position:relative;overflow:hidden;transition:.3s}
@@ -115,20 +131,38 @@
     .delivery span{color:#bdc9d6;font-size:.84rem}
 
     .projects{background:var(--paper)}
+    .project-status-block + .project-status-block{margin-top:88px;padding-top:70px;border-top:1px solid var(--line)}
+    .project-status-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:26px}
+    .project-status-head h3{font-size:2.35rem;margin-top:8px}
+    .project-status-head p{max-width:430px;color:var(--muted);font-size:.82rem;margin:0}
+    .status-kicker{display:inline-flex;align-items:center;gap:9px;font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .status-kicker::before{content:"";width:8px;height:8px;border-radius:50%;display:inline-block}
+    .completed-kicker{color:var(--teal-dark)}
+    .completed-kicker::before{background:var(--teal)}
+    .ongoing-kicker{color:var(--navy)}
+    .ongoing-kicker::before{background:var(--gold);box-shadow:0 0 0 4px rgba(229,166,43,.13)}
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
     .filter{border:1px solid var(--line);background:white;padding:10px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;cursor:pointer;transition:.2s}
     .filter:hover,.filter.active{background:var(--navy);border-color:var(--navy);color:white}
     .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .project{background:white;cursor:pointer;position:relative;min-height:390px;overflow:hidden}
     .project.hidden{display:none}
-    .project-media{height:245px;overflow:hidden;background:#dfe6ec}
+    .project-media{height:245px;overflow:hidden;background:#dfe6ec;position:relative}
     .project-media img{width:100%;height:100%;object-fit:cover;transition:.5s}
     .project:hover .project-media img{transform:scale(1.04)}
+    .project-status-badge{position:absolute;left:14px;top:14px;padding:7px 10px;background:rgba(255,255,255,.94);font-size:.61rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;box-shadow:0 5px 18px rgba(18,36,59,.12)}
+    .project-status-badge.completed{color:var(--teal-dark)}
+    .project-status-badge.ongoing{color:var(--navy);border-left:3px solid var(--gold)}
     .project-body{padding:23px}
     .project-location{font-size:.65rem;color:var(--teal-dark);letter-spacing:.16em;text-transform:uppercase;font-weight:700}
     .project h3{font-size:1.75rem;margin:10px 0}
     .project-cost{font-family:"Barlow Condensed";font-size:1.3rem;color:var(--navy)}
     .project-link{position:absolute;right:20px;bottom:20px;font-size:1.25rem;color:var(--teal-dark)}
+    .project-disclaimer{color:var(--muted);font-size:.72rem;margin-top:22px}
+    .ongoing-empty{display:flex;align-items:center;gap:18px;border:1px dashed #c9d3dc;background:white;padding:24px 26px;min-height:110px}
+    .ongoing-empty-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);font-size:1.5rem;flex:0 0 42px}
+    .ongoing-empty strong{font-family:"Barlow Condensed";font-size:1.25rem;text-transform:uppercase}
+    .ongoing-empty p{color:var(--muted);font-size:.78rem;margin:4px 0 0}
 
     .leadership{background:white}
     .lead-grid{display:grid;grid-template-columns:360px 1fr;gap:70px}
@@ -230,6 +264,8 @@
     @media (max-width:1050px){
       .nav-links{gap:15px}.nav-links a{font-size:.7rem}
       .service-grid{grid-template-columns:repeat(2,1fr)}
+      .purpose-grid{grid-template-columns:1fr}
+      .purpose-card{min-height:0}
       .project-grid{grid-template-columns:repeat(2,1fr)}
       .hero-media{width:64%}
       .intro-grid,.cap-grid,.contact-grid{grid-template-columns:1fr}
@@ -261,6 +297,11 @@
       .intro-copy{columns:1}
       .intro-image img{height:380px}
       .service-grid,.project-grid,.standards-grid,.training-grid{grid-template-columns:1fr}
+      .purpose-grid{grid-template-columns:1fr}
+      .purpose-card{padding:27px}
+      .project-status-head{display:block}
+      .project-status-head p{margin-top:12px}
+      .project-status-block + .project-status-block{margin-top:62px;padding-top:52px}
       .cap-grid{gap:40px}
       .cap-list{grid-template-columns:1fr}
       .lead-grid{grid-template-columns:1fr}
